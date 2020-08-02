@@ -32,7 +32,7 @@ class User implements UserInterface
     /**
      * @ORM\Column(type="string", length=180, unique=true)
      * @Groups({"customers_read", "invoices_read", "invoices_sub_resource", "users_read"})
-     * @Assert\NotBlank(message="L'email doit être resneigné !")
+     * @Assert\NotBlank(message="L'email doit être resnseigné !")
      * @Assert\Email(message="L'adresse email doit avoir un format valide !")
      */
     private $email;

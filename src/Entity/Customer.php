@@ -17,8 +17,8 @@ use Symfony\Component\Validator\Constraints as Assert;
 /**
  * @ORM\Entity(repositoryClass=CustomerRepository::class)
  * @ApiResource(
- *     collectionOperations={"GET", "POST"},
- *     itemOperations={"GET", "DELETE", "PUT", "PATCH"},
+ *     collectionOperations={"get", "post"},
+ *     itemOperations={"get", "delete", "put", "patch"},
  *     subresourceOperations={"invoices_get_subresource"={"path"="/customers/{id}/invoices"}},
  *     normalizationContext={
  *          "groups"={"customers_read"}
@@ -56,7 +56,7 @@ class Customer
     /**
      * @ORM\Column(type="string", length=255)
      * @Groups({"customers_read", "invoices_read"})
-     * @Assert\NotBlank(message="L'adress eemail du customer est obligatoire")
+     * @Assert\NotBlank(message="L'adress email du customer est obligatoire")
      * @Assert\Email(message="Le format de l'adresse email doit être valide")
      */
     private $email;
